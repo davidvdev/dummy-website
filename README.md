@@ -2,8 +2,8 @@
 
 ## Project Links
 
-- [add your github repo link]()
-- [add your deployment link]()
+- [Github repo link](https://github.com/davidvdev/dummy-website)
+- [Deployment link](https://dummy-website-opal.vercel.app/)
 
 ## Project Description
 
