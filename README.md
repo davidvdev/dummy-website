@@ -7,15 +7,79 @@
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+This site aims to recreate a content-forward social media experience. Using the modern version of Reddit as a design inspiration, this site will display a main feed of content cards, sub feeds from which the main feed is constructed, and the ability to save cards to a personal favorites feed.
 
 ## API
 
-Use this section to include info about the API you have chosen and a code snippet of the data that it returns and is required for your project. 
+For right now, all data is being pulled from [Contentful](https://www.contentful.com/developers/docs/references/content-delivery-api/), but, if possible, I'm considering implementings the [Nasa APOD API](https://api.nasa.gov/), as well.  
 
 
-```
-{data: {} }
+```json
+// Contentful Data
+
+{
+  "sys": {
+    "type": "Array"
+  },
+  "total": 1,
+  "skip": 0,
+  "limit": 100,
+  "items": [
+    {
+      "metadata": {
+        "tags": [
+          
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "7msncevw6mo1"
+          }
+        },
+        "id": "6fFHd9mcY5EtZWs3Wnftxx",
+        "type": "Entry",
+        "createdAt": "2021-07-29T20:01:02.909Z",
+        "updatedAt": "2021-07-29T20:01:02.909Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "blog"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "title": "blog post number 1",
+        "body": "all of the content from the blog post.",
+        "date": "2021-07-16T00:00-05:00"
+      }
+    },
+  ]
+}
+
+// NASA APOD Data
+{
+  "copyright": "Carlos Uriarte",
+  "date": "2021-07-29",
+  "explanation": "This tall telescopic field of view looks out along the plane of our Milky Way Galaxy toward the nebula rich constellation Cygnus the Swan.",
+  "hdurl": "https://apod.nasa.gov/apod/image/2107/sh2_101_04.jpg",
+  "media_type": "image",
+  "service_version": "v1",
+  "title": "The Tulip and Cygnus X-1",
+  "url": "https://apod.nasa.gov/apod/image/2107/sh2_101_04_1024.jpg"
+}
 ```
 
 
