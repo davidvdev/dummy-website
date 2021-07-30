@@ -115,22 +115,38 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
 | Component | Description | 
-| --- | :---: |  
-| App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| ---      | :---: |  
+| App      | Houses API call data, routes, and context (if used)| 
+| Main     | The main page "/" holds the feed for all cards| 
+| Header   | appears on every page, holds the menu | 
+| Menu     | expands from hamburger, include nav and options| 
+| Feed     | Mainly a container for cards, but appears on every page and determines which cards get rendered | 
+| Card     | dynamically made with data from API(s) can be favorited to be added to a favorites page | 
+| Page | Sibling of main, tailored feed for favorites, and PageHead shows info about specific page | 
+| PageHead | Shows specific infor about Page and holds link to PageInfo | 
+| PageInfo | exclusive to pages, when accessed replaces feed with this component containing info and rules about this page. | 
 
+## Time Frames
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
-
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Component                            | Priority | Estimated Time | Time Invetsted | Actual Time |
+| ------------------------------------------- |:-:| :------: | :-----: | :----: |
+| API Call and filtering data                 | H | 2 hrs    |  hrs    | hrs    |
+| Creating Contenful data                     | L | 2 hrs    |  hrs    | hrs    |
+| Standardizing data for ease of use          | M | 3 hrs    |  hrs    | hrs    |
+| Setting up useContex for easy data flow     | M | 2 hrs    |  hrs    | hrs    |
+| Skeleton styling of components for function | M | 1 hr     |  hr     | hr     |
+| Feed layout                                 | H | 1.5 hrs  |  hrs    | hrs    |
+| Card layout                                 | M | 2 hrs    |  hrs    | hrs    |
+| Link and routing through menu               | H | 2.5 hrs  |  hrs    | hrs    |
+| Effectively repurposing feed component      | L | 2 hrs    |  hrs    | hrs    |
+| Effectively repurposing page component      | L | 3 hrs    |  hrs    | hrs    |
+| Handling state and the favorites feed       | M | 3 hrs    |  hrs    | hrs    |
+| final styling and layout                    | H | 2 hrs    |  hrs    | hrs    |
+| Total                                       | - | 26 hrs   |  hrs    | hrs    | 
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
+| Library | Role |
+| ------- | ---- |
 
 ## Code Snippet
 
