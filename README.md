@@ -92,18 +92,22 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 - [React architecture](https://i.imgur.com/ATEyVmA.jpg)
 
 
-### MVP/PostMVP - 5min
+### MVP/PostMVP
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-#### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
+#### MVP
+- Pull in data from multiple APIs
+- Create Content Feed from dynamically created cards
+- Implement a seperate favorites page w/ a feed of favorited cards
+- Header with hamburger menu and nav
 
-#### PostMVP EXAMPLE
+#### PostMVP
 
-- Add localStorage or firebase for storage
+- Use the favorites page as a template for subgroup pages
+    - only show cards related to that subgroup in the feed.
+- add multiple points of interaction
+    - voting, commenting, sharing
 
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
