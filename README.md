@@ -89,7 +89,7 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 
 - [Mobile 1st wireframe](https://i.imgur.com/hEmgKQg.jpg)
 - [Desktop 2nd wireframe](https://i.imgur.com/ZVdagQy.jpg)
-- [React architecture](https://i.imgur.com/ATEyVmA.jpg)
+- [React architecture](https://i.imgur.com/xEjkwW9.jpg)
 
 
 ### MVP/PostMVP
