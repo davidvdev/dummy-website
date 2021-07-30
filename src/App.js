@@ -1,8 +1,11 @@
-import { sin } from 'prelude-ls';
+
 import React, {useEffect, useState} from 'react'
+import {Route} from 'react-router-dom'
 import './App.css';
 
-import Card from './components/Card'
+import Header from './components/Header';
+import Main from './pages/Main';
+import SubPage from './pages/SubPage';
 
 function App() {
 
@@ -21,14 +24,20 @@ function App() {
   }
 
 
-  useEffect(()=>{
-    makeAPIcall()
-  },[])
+  // useEffect(()=>{
+  //   makeAPIcall()
+  // },[])
 
 
   return (
     <div className="App">
-      <Card data={dummyData}/>
+      <Header />
+      <Route exact path="/">
+        <Main />
+      </Route>
+      <Route path="/page">
+        <SubPage />
+      </Route>
     </div>
   );
 }
