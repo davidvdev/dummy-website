@@ -1,14 +1,24 @@
+:root {
+  --main-color: rgb(48, 56, 100);
+  --split-comp-r: rgb(138,96,73);
+  --split-comp-l: rgb(116,138,73);
+  --dark-bg-text: whitesmoke;
+  --light-bg-text: #191919;
+}
+
 .App {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  color: var(--light-bg-text)
 }
 
 header {
+  /* box-sizing: border-box;
+  position: fixed;
+  width: 100vw; */
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  background-color: rgb(48, 56, 100);
+  background-color: var(--main-color);
+  color: var(--dark-bg-text);
 }
 
 .branding {
@@ -16,11 +26,62 @@ header {
   flex-direction: row;
   align-items: center;
 }
+.branding img {
+  height: 4em;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .card {
-  margin: 3em 20%;
+  display: flex;
+  flex-direction: column;
   padding: 1em;
-  border: 3px grey solid;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px black;
+  box-shadow: 3px 3px 5px whitesmoke;
+}
+
+.card .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .post-details img {
+  width: 2em;
+  fill: var(--main-color);
+}
+
+.card .post-details a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card .row .post-details {
+  justify-content: space-between;
+}
+
+.card .row div {
+  display: flex;
+  align-items: center;
+}
+
+.card .score {
+  padding: 0 0.5em;
+}
+
+.actions {
+  font-size: 1.5em;
+}
+
+i:active {
+  color: var(--dark-bg-text);
+}
+
+.clicked {
+  color: var(--split-comp-r)
 }

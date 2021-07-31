@@ -6,7 +6,7 @@ const Header = (props) => {
     return (
         <header>
             <div className="branding">
-                <img src='../img/colorful-hexagon-300dpi-logo.png' alt='logo' />
+                <img src='https://i.imgur.com/IZFreUE.png' alt='logo' />
                 <h4>BRANDING</h4>
             </div>
             <div className="menu-container">

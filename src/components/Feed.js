@@ -1,8 +1,10 @@
 import React from 'react'
 
+import Card from './Card'
+
 const Feed = (props) => {
     return (
-        <h1>Feed</h1>
+        <Card data={props.data}/>
     )
 }
 

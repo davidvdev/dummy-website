@@ -1,8 +1,10 @@
 import React from 'react'
 
+import Feed from '../components/Feed'
+
 const Main = (props) => {
     return (
-        <h1>Main</h1>
+        <Feed data={props.data}/>
     )
 }
 
