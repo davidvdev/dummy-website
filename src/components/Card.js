@@ -32,21 +32,20 @@ const Card = (props) => {
                     default:
                         break;
         }
+        }
 
-        const contentConditional = (type) => {
-            if (type === 'text'){
+        const contentConditional = (item) => {
+            if (item.content.type === 'text'){
                 return <p>{item.content.content}</p>
             } else {
                 return <img src={item.content.content} alt={item.title} />
             }
         }
 
-        }
-
         return(
             <div className="content">
                 {props.data.map((item, index) => {
-                    
+
                     return (
                         <div className='card' key={index}>
                             <div className='row'>
@@ -65,8 +64,8 @@ const Card = (props) => {
                             <div className='row'>
                                 <h2>{item.title}</h2>
                             </div>
-                            <div className='row'>
-                                {contentConditional(item.content.type)}
+                            <div className='row content-row'>
+                                {contentConditional(item)}
                             </div>
                             <div className='row actions'>
                                 <div className='votes'>
