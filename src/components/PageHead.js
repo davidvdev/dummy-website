@@ -20,7 +20,7 @@ const PageHead = (props) => {
 
     const loading = () => {
         return (<>
-           // Loading spinner taken from https://codepen.io/mrsahar/pen/pMxyrE?editors=1100
+           {/* // Loading spinner taken from https://codepen.io/mrsahar/pen/pMxyrE?editors=1100 */}
            <h5>favorited posts will appear here</h5>
            <div class="col-sm-2">
            <div id="triangle3">

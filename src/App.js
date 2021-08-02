@@ -75,7 +75,7 @@ function App() {
 
 
   useEffect(()=>{
-    // makeAPIcall()
+    makeAPIcall()
     nasaAPIcall()
   },[])
 
