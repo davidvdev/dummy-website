@@ -7,7 +7,7 @@ const Header = (props) => {
         <header>
             <div className="branding">
                 <img src='https://i.imgur.com/IZFreUE.png' alt='logo' />
-                <h4>BRANDING</h4>
+                <h4>Fav Space</h4>
             </div>
             <div className="menu-container">
                 <Menu />

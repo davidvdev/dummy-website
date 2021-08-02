@@ -122,7 +122,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Menu     | expands from hamburger, include nav and options| 
 | Feed     | Mainly a container for cards, but appears on every page and determines which cards get rendered | 
 | Card     | dynamically made with data from API(s) can be favorited to be added to a favorites page | 
-| Page | Sibling of main, tailored feed for favorites, and PageHead shows info about specific page | 
+| SubPage | Sibling of main, tailored feed for favorites, and PageHead shows info about specific page | 
 | PageHead | Shows specific infor about Page and holds link to PageInfo | 
 | PageInfo | exclusive to pages, when accessed replaces feed with this component containing info and rules about this page. | 
 

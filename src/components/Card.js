@@ -12,7 +12,6 @@ const Card = (props) => {
             console.log('EVENT:',event)
             console.log('ITEM:',item)
             const name = event.target.attributes[0].value
-            const parent = event.target.parentElement.parentElement
             switch(name) {
                 case 'vote-up':
                     event.target.style.color='var(--split-comp-l)';

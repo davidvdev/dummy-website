@@ -19,9 +19,16 @@ const PageHead = (props) => {
     }
 
     const loading = () => {
-        return (
-            <h1>Your favorite posts will display here!</h1>
-        )
+        return (<>
+           // Loading spinner taken from https://codepen.io/mrsahar/pen/pMxyrE?editors=1100
+           <h5>favorited posts will appear here</h5>
+           <div class="col-sm-2">
+           <div id="triangle3">
+               <span></span>
+               <span></span>
+           </div>
+            </div>
+        </>)
     }
 
     return props.page ? loaded() : loading();
