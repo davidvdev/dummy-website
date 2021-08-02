@@ -4,7 +4,7 @@ import Card from './Card'
 
 const Feed = (props) => {
     return (
-        <Card data={props.data}/>
+        <Card data={props.data} addToFavorites={props.addToFavorites}/>
     )
 }
 

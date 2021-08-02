@@ -35,6 +35,30 @@ header {
   color: inherit;
 }
 
+/* PAGE HEAD STYLING */
+.page-head {
+  text-align: center;
+}
+
+.page-head-img {
+  height: 100px;
+  border-bottom: 1px solid var(--dark-bg-text);
+}
+
+.page-emblem {
+  width: 100px;
+  border: 1px solid var(--dark-bg-text);
+  border-radius: 360px;
+}
+
+.page-links {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid var(--dark-bg-text)
+}
+
+
+/* CARD STYLING */
 .card {
   display: flex;
   flex-direction: column;

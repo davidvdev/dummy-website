@@ -8,7 +8,7 @@ const Menu = (props) => {
             <Link to="/">
                 <div>Home</div>
             </Link>
-            <Link to="/page">
+            <Link to="/page/favorites">
                 <div>Favs</div>
             </Link>
             </ul>

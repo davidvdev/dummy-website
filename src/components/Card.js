@@ -2,24 +2,35 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import '../loading.css'
-import planet from '../img/ringed-planet.svg'
 
 const Card = (props) => {
     // console.log('Card',props)
 
     const loaded = () => {
 
-    const handleClick = (event) => {
-        console.log(event)
+    const handleClick = (event, item) => {
+        console.log('EVENT:',event)
+        console.log('ITEM:',item)
         const name = event.target.attributes[0].value
+        const parent = event.target.parentElement.parentElement
        switch(name) {
            case 'vote-up':
                event.target.style.color='var(--split-comp-l)';
-               console.log(event.target.parentElement.parentElement.parentElement)
                break;
            case 'vote-down':
                event.target.style.color='var(--split-comp-r)';
                break;
+            case 'comment':
+                break;
+            case 'favorite':
+               event.target.style.color='var(--split-comp-l)';
+               console.log('this is the item:', item)
+               props.addToFavorites(item)
+                break;
+            case 'share':
+                break;
+            default:
+                break;
 
        }
 
@@ -41,7 +52,7 @@ const Card = (props) => {
                                 <h6>{item.postTime}</h6>
                             </div>
                             <div className='card-options'>
-                                <i onClick={handleClick} class="fas fa-ellipsis-h"></i>
+                                <i onClick={() =>{handleClick(item)}} class="fas fa-ellipsis-h"></i>
                             </div>
                         </div>
                         <div className='row'>
@@ -54,13 +65,13 @@ const Card = (props) => {
                         {/* end of replacement section */}
                         <div className='row actions'>
                             <div className='votes'>
-                                <i onClick={handleClick} name="vote-up" class="fas fa-arrow-alt-circle-up"></i>
+                                <i onClick={() =>{handleClick(item)}} name="vote-up" class="fas fa-arrow-alt-circle-up"></i>
                                 <p className='score'>{item.score}</p>
-                                <i onClick={handleClick} name="vote-down" class="fas fa-arrow-alt-circle-down"></i>
+                                <i onClick={() =>{handleClick(item)}} name="vote-down" class="fas fa-arrow-alt-circle-down"></i>
                             </div>
-                            <i onClick={handleClick} class="fas fa-comments"></i>
-                            <i onClick={handleClick} class="fas fa-star"></i>
-                            <i onClick={handleClick} class="fas fa-share-square"></i>
+                            <i onClick={() =>{handleClick(item)}} name="comment" class="fas fa-comments"></i>
+                            <i onClick={(event) =>handleClick(event, item)} name="favorite" class="fas fa-star"></i>
+                            <i onClick={() =>{handleClick(item)}} name="share" class="fas fa-share-square"></i>
                         </div>
                     </div>
                 )

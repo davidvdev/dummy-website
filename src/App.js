@@ -1,6 +1,6 @@
 
 import React, {useEffect, useState} from 'react'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import './App.css';
 import './loading.css'
 
@@ -12,13 +12,14 @@ import planet from './img/ringed-planet.svg'
 function App() {
 
   const [postData, setPostData] = useState(null)
+  const [favPosts, setFavPosts] = useState([])
 
-  const postDataTemp = [{
-    orgin: {emblem:'', page:''},
-    postTime: '',
-    title:'',
-    content: {type:'',content:'' }
-  }]
+  // const postDataTemp = [{
+  //   orgin: {emblem:'', page:''},
+  //   postTime: '',
+  //   title:'',
+  //   content: {type:'',content:'' }
+  // }]
 
   const makeAPIcall = async () => {
     // GET THE API DATA
@@ -47,6 +48,10 @@ function App() {
     setPostData(postDataArr)
   }
 
+  const addToFavorites = (newFav) => {
+    setFavPosts([...favPosts, newFav])
+  }
+
 
 
 
@@ -57,12 +62,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Route exact path="/">
-        <Main data={postData}/>
-      </Route>
-      <Route path="/page/:page">
-        <SubPage data={postData}/>
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <Main data={postData} addToFavorites={addToFavorites}/>
+        </Route>
+        <Route 
+          path="/page/:page"
+          render={(routerProps) => {return <SubPage {...routerProps} data={postData} favorites={favPosts} addToFavorites={addToFavorites}/>}}
+        />
+      </Switch>
     </div>
   );
 }
