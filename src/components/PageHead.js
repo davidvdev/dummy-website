@@ -9,7 +9,7 @@ const PageHead = (props) => {
                 <div className="page-head-img" style={{backgroundImage: `url(${props.hero})`}}></div>
                 <img src={props.emblem} alt='page emblem' className='page-emblem'/>
                 <h1>{props.page}</h1>
-                <h2>subtitle for page</h2>
+                <h2>{props.pageDesc}</h2>
                 <div className="page-links">
                     <h4>Page Feed</h4>
                     <h4>Page Info</h4>

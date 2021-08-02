@@ -34,9 +34,11 @@ function App() {
 
     // MAP IT INTO A STANDARDIZED FORMAT BASED ON postDataTemp
     const postDataArr = data.items.map((item)=>{
-      const heroImg = 'https://images.unsplash.com/photo-1565436381579-52471481f017?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
         return (
-          {origin : {emblem : planet, page:'blog', hero: heroImg},
+          {origin : {emblem : 'https://images.unsplash.com/photo-1471970394675-613138e45da3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', 
+            page:'blog', 
+            pageDesc:'the Contentful blog', 
+            hero: 'https://images.unsplash.com/photo-1500989145603-8e7ef71d639e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80'},
           postTime:item.fields.date,
           title:item.fields.title,
           content:{type:'text',content:item.fields.body}, score: 0, favorite: false
@@ -56,6 +58,7 @@ function App() {
       return (
         {origin : {emblem : 'https://api.nasa.gov/assets/img/favicons/favicon-192.png', 
           page:'apod', 
+          pageDesc: 'Astronomy Photo of the Day',
           hero: 'https://api.nasa.gov/assets/img/general/apod.jpg'},
         postTime:item.date,
         title:item.title,
@@ -76,7 +79,7 @@ function App() {
 
   useEffect(()=>{
     makeAPIcall()
-    nasaAPIcall()
+    // nasaAPIcall()
   },[])
 
   return (

@@ -23,7 +23,10 @@ const SubPage = (props) => {
         const favPage = {
             emblem:'https://images.unsplash.com/photo-1533558527255-407147f3ae72?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
             hero:'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=827&q=80', 
-            page:'favorites'}
+            page:'favorites',
+            pageDesc: 'a place for all of your favorite posts'    
+        }
+            
 
         return (<>
             <PageHead label={'Favorites'} {...favPage}/>
