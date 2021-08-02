@@ -5,10 +5,10 @@ const PageHead = (props) => {
 
     const loaded = () => {
         return (
-            <div className="page-head" style={{backgroundImage: props.origin.hero}}>
+            <div className="page-head" style={{backgroundImage: props.hero}}>
                 <div className="page-head-img"></div>
-                <img src={props.origin.emblem} alt='page emblem' className='page-emblem'/>
-                <h1>{props.origin.page}</h1>
+                <img src={props.emblem} alt='page emblem' className='page-emblem'/>
+                <h1>{props.page}</h1>
                 <h2>subtitle for page</h2>
                 <div className="page-links">
                     <h4>Page Feed</h4>
@@ -24,7 +24,7 @@ const PageHead = (props) => {
         )
     }
 
-    return props.origin ? loaded() : loading();
+    return props.page ? loaded() : loading();
 }
 
 export default PageHead

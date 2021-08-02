@@ -43,11 +43,29 @@ function App() {
           }
         )
     })
-
-    // console.log('postDataArr = ',postDataArr)
-
     setPostData(postDataArr)
   }
+
+  const nasaAPIcall = async () => {
+    const apiKey = `MdAdCzvrJrRNJyv0elbkdWQw3MtPf2Ll8OdXAMMZ`
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=12`
+    const response = await fetch(url)
+    const data = await response.json()
+
+    const postDataArr = data.map((item)=>{
+      return (
+        {origin : {emblem : 'https://api.nasa.gov/assets/img/favicons/favicon-192.png', 
+          page:'apod', 
+          hero: 'https://api.nasa.gov/assets/img/general/apod.jpg'},
+        postTime:item.date,
+        title:item.title,
+        content:{type:'image',content:item.url}, score: 0, favorite: false
+        }
+      )
+    })
+    setPostData(postDataArr)
+  }
+
 
   const addToFavorites = (newFav) => {
     setFavPosts([...favPosts, newFav])
@@ -57,7 +75,8 @@ function App() {
 
 
   useEffect(()=>{
-    makeAPIcall()
+    // makeAPIcall()
+    nasaAPIcall()
   },[])
 
   return (
