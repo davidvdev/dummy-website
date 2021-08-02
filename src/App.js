@@ -7,7 +7,6 @@ import './loading.css'
 import Header from './components/Header';
 import Main from './pages/Main';
 import SubPage from './pages/SubPage';
-import planet from './img/ringed-planet.svg'
 
 function App() {
 
@@ -15,25 +14,20 @@ function App() {
   const [favPosts, setFavPosts] = useState([])
 
   // const postDataTemp = [{
-  //   orgin: {emblem:'', page:''},
+  //   orgin: {emblem:'', page:'', hero:'', pageDesc:''},
   //   postTime: '',
   //   title:'',
   //   content: {type:'',content:'' }
   // }]
 
   const makeAPIcall = async () => {
-    // GET THE API DATA
-    const spaceID = `7msncevw6mo1`
-    const environmentID = `master`
-    const apiKey=`y7x8mZKyJ-oiyguxqG0K3EjJ38mideKPSuOxuLggn34`
-    const baseURL = `https://cdn.contentful.com`
-    const allEntries = `/spaces/${spaceID}/environments/${environmentID}/entries?access_token=${apiKey}`
-    const response = await fetch(baseURL+allEntries)
-    const data = await response.json()
-    // console.log('API CALL DATA',data)
 
-    // MAP IT INTO A STANDARDIZED FORMAT BASED ON postDataTemp
-    const postDataArr = data.items.map((item)=>{
+    // CONTENFUL API CALL
+    const cAPI = {sID:`7msncevw6mo1`, eID: `master`, key: `y7x8mZKyJ-oiyguxqG0K3EjJ38mideKPSuOxuLggn34`}
+    const url = `https://cdn.contentful.com/spaces/${cAPI.sID}/environments/${cAPI.eID}/entries?access_token=${cAPI.key}`
+    const response = await fetch(url)
+    const data = await response.json()
+    const blogDataArr = data.items.map((item)=>{
         return (
           {origin : {emblem : 'https://images.unsplash.com/photo-1471970394675-613138e45da3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', 
             page:'blog', 
@@ -45,16 +39,12 @@ function App() {
           }
         )
     })
-    setPostData(postDataArr)
-  }
-
-  const nasaAPIcall = async () => {
+    // NASA APOD API CALL
     const apiKey = `MdAdCzvrJrRNJyv0elbkdWQw3MtPf2Ll8OdXAMMZ`
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=12`
-    const response = await fetch(url)
-    const data = await response.json()
-
-    const postDataArr = data.map((item)=>{
+    const url2 = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=12`
+    const response2 = await fetch(url2)
+    const data2 = await response2.json()
+    const apodDataArr = data2.map((item)=>{
       return (
         {origin : {emblem : 'https://api.nasa.gov/assets/img/favicons/favicon-192.png', 
           page:'apod', 
@@ -66,21 +56,42 @@ function App() {
         }
       )
     })
+
+    const postDataArr = [...blogDataArr, ...apodDataArr].map((post, index) => {
+      return {...post, id:index}
+    })
+    console.log(postDataArr)
+
     setPostData(postDataArr)
   }
+
+  // const nasaAPIcall = async () => {
+  //   const apiKey = `MdAdCzvrJrRNJyv0elbkdWQw3MtPf2Ll8OdXAMMZ`
+  //   const url2 = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=12`
+  //   const response2 = await fetch(url2)
+  //   const data2 = await response2.json()
+
+  //   const apodDataArr = data2.map((item)=>{
+  //     return (
+  //       {origin : {emblem : 'https://api.nasa.gov/assets/img/favicons/favicon-192.png', 
+  //         page:'apod', 
+  //         pageDesc: 'Astronomy Photo of the Day',
+  //         hero: 'https://api.nasa.gov/assets/img/general/apod.jpg'},
+  //       postTime:item.date,
+  //       title:item.title,
+  //       content:{type:'image',content:item.url}, score: 0, favorite: false
+  //       }
+  //     )
+  //   })
+  //   setPostData(postDataArr)
+  // }
 
 
   const addToFavorites = (newFav) => {
     setFavPosts([...favPosts, newFav])
   }
 
-
-
-
-  useEffect(()=>{
-    makeAPIcall()
-    // nasaAPIcall()
-  },[])
+  useEffect(()=>{ makeAPIcall() },[])
 
   return (
     <div className="App">
