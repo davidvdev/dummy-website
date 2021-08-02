@@ -33,9 +33,10 @@ function App() {
     // console.log('API CALL DATA',data)
 
     // MAP IT INTO A STANDARDIZED FORMAT BASED ON postDataTemp
-    const postDataArr = data.items.map((item, index)=>{
+    const postDataArr = data.items.map((item)=>{
+      const heroImg = 'https://images.unsplash.com/photo-1565436381579-52471481f017?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
         return (
-          {origin : {emblem : planet, page:'blog'},
+          {origin : {emblem : planet, page:'blog', hero: heroImg},
           postTime:item.fields.date,
           title:item.fields.title,
           content:{type:'text',content:item.fields.body}, score: 0, favorite: false
