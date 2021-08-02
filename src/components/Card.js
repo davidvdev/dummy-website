@@ -19,17 +19,16 @@ const Card = (props) => {
                 case 'vote-down':
                     event.target.style.color='var(--split-comp-r)';
                     break;
-                    case 'comment':
-                        break;
-                    case 'favorite':
+                case 'comment':
+                    break;
+                case 'favorite':
                     event.target.style.color='var(--split-comp-l)';
-                    console.log('this is the item:', item)
                     props.addToFavorites(item)
-                        break;
-                    case 'share':
-                        break;
-                    default:
-                        break;
+                    break;
+                case 'share':
+                    break;
+                default:
+                    break;
         }
         }
 
@@ -57,7 +56,7 @@ const Card = (props) => {
                                     <h6>{item.postTime}</h6>
                                 </div>
                                 <div className='card-options'>
-                                    <i onClick={() =>{handleClick(item)}} class="fas fa-ellipsis-h"></i>
+                                    <i onClick={(event) => handleClick(event, item)} className="fas fa-ellipsis-h"></i>
                                 </div>
                             </div>
                             <div className='row'>
@@ -68,13 +67,13 @@ const Card = (props) => {
                             </div>
                             <div className='row actions'>
                                 <div className='votes'>
-                                    <i onClick={() =>{handleClick(item)}} name="vote-up" class="fas fa-arrow-alt-circle-up"></i>
+                                    <i onClick={(event) => handleClick(event, item)} name="vote-up" className="fas fa-arrow-alt-circle-up"></i>
                                     <p className='score'>{item.score}</p>
-                                    <i onClick={() =>{handleClick(item)}} name="vote-down" class="fas fa-arrow-alt-circle-down"></i>
+                                    <i onClick={(event) => handleClick(event, item)} name="vote-down" className="fas fa-arrow-alt-circle-down"></i>
                                 </div>
-                                <i onClick={() =>{handleClick(item)}} name="comment" class="fas fa-comments"></i>
-                                <i onClick={(event) =>handleClick(event, item)} name="favorite" class="fas fa-star"></i>
-                                <i onClick={() =>{handleClick(item)}} name="share" class="fas fa-share-square"></i>
+                                <i onClick={(event) => handleClick(event, item)} name="comment" className="fas fa-comments"></i>
+                                <i onClick={(event) => handleClick(event, item)} name="favorite" className="fas fa-star"></i>
+                                <i onClick={(event) => handleClick(event, item)} name="share" className="fas fa-share-square"></i>
                             </div>
                         </div>
                     )
@@ -87,7 +86,7 @@ const Card = (props) => {
     const loading = () => {
         return (
             // Loading spinner taken from https://codepen.io/mrsahar/pen/pMxyrE?editors=1100
-            <div class="col-sm-2">
+            <div className="col-sm-2">
                 <div id="triangle3">
                     <span></span>
                     <span></span>
