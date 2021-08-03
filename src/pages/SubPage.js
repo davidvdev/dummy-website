@@ -6,17 +6,12 @@ import PageHead from '../components/PageHead'
 const SubPage = (props) => {
     console.log('SubPage', props)
 
-    // This StackOverflow post was helpful in determining how to create a array of unique page origins:
-    // https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects?page=1&tab=votes#tab-top
-    // arr.filter((v,i,a)=>a.findIndex(t=>(t.id === v.id))===i)
-    // const unique = [...new Set(array.map(item => item.age))];
-
     const origins = props.data.map((item) => item.origin)
-    // const pagesArr = origins.filter((page, index, origins) => origins.findIndex(item => (item.id === page.id)) === index)
-    // const pagesArr = [...new Set(origins.map(item => item.page))]
-    const pagesArr = [...new Set(origins.map(item => item.page))]
+    const uniquePages = [...new Set(origins.map(item => item.page))]
+    const pagesArr = uniquePages.map(uniqueItem => origins.find(item => item.page === uniqueItem))
 
     console.log('origins: ', origins)
+    console.log('uniquePages: ', uniquePages)
     console.log('pagesArr: ', pagesArr)
 
     const page = props.match.params.page
@@ -38,9 +33,9 @@ const SubPage = (props) => {
     } else {
         // map over the pagesArr
         // return a new page head and feed based on the origin values.
-        // pagesArr.map(page => {
-        //     console.log('page map',page)
-        // })
+        pagesArr.map(page => {
+            console.log('page map',page)
+        })
         return (<>
             <PageHead {...props.data[0].origin}/>
             <Feed data={props.data} addToFavorites={props.addToFavorites}/>
