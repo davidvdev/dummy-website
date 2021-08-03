@@ -67,28 +67,6 @@ function App() {
     setPostData(postDataArr)
   }
 
-  // const nasaAPIcall = async () => {
-  //   const apiKey = `MdAdCzvrJrRNJyv0elbkdWQw3MtPf2Ll8OdXAMMZ`
-  //   const url2 = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=12`
-  //   const response2 = await fetch(url2)
-  //   const data2 = await response2.json()
-
-  //   const apodDataArr = data2.map((item)=>{
-  //     return (
-  //       {origin : {emblem : 'https://api.nasa.gov/assets/img/favicons/favicon-192.png', 
-  //         page:'apod', 
-  //         pageDesc: 'Astronomy Photo of the Day',
-  //         hero: 'https://api.nasa.gov/assets/img/general/apod.jpg'},
-  //       postTime:item.date,
-  //       title:item.title,
-  //       content:{type:'image',content:item.url}, score: 0, favorite: false
-  //       }
-  //     )
-  //   })
-  //   setPostData(postDataArr)
-  // }
-
-
   const addToFavorites = (newFav) => {
     setFavPosts([...favPosts, newFav])
   }
