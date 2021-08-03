@@ -75,9 +75,9 @@ const Card = (props) => {
                                     <p className='score'>{item.score}</p>
                                     <i onClick={(event) => handleClick(event, item)} name="vote-down" className="fas fa-arrow-alt-circle-down"></i>
                                 </div>
-                                <i onClick={(event) => handleClick(event, item)} name="comment" className="fas fa-comments"></i>
+                                {/* <i onClick={(event) => handleClick(event, item)} name="comment" className="fas fa-comments"></i> */}
                                 <i onClick={(event) => handleClick(event, item)} name="favorite" className="fas fa-star" style={initialStyle(item)} ></i>
-                                <i onClick={(event) => handleClick(event, item)} name="share" className="fas fa-share-square"></i>
+                                {/* <i onClick={(event) => handleClick(event, item)} name="share" className="fas fa-share-square"></i> */}
                             </div>
                         </div>
                     )

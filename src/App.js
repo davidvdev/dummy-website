@@ -81,11 +81,11 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/">
-          <Main data={postData} addToFavorites={addToFavorites}/>
+          <Main data={postData} addToFavorites={addToFavorites} className="app-body"/>
         </Route>
         <Route 
           path="/page/:page"
-          render={(routerProps) => {return <SubPage {...routerProps} data={postData} addToFavorites={addToFavorites}/>}}
+          render={(routerProps) => {return <SubPage {...routerProps} data={postData} addToFavorites={addToFavorites} className="app-body"/>}}
         />
       </Switch>
     </div>
