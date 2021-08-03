@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 import '../loading.css'
 
 const Card = (props) => {
-    // console.log('Card',props)
 
     const loaded = () => {
 
         const handleClick = (event, item) => {
-            console.log('EVENT:',event)
-            console.log('ITEM:',item)
+          
+            const style = event.target.style
             const name = event.target.attributes[0].value
+          
             switch(name) {
                 case 'vote-up':
                     event.target.style.color='var(--split-comp-l)';
@@ -22,7 +22,7 @@ const Card = (props) => {
                 case 'comment':
                     break;
                 case 'favorite':
-                    event.target.style.color='var(--split-comp-l)';
+                    item.favorite ? style.color='var(--light-bg-text)' : style.color='var(--split-comp-l)'
                     props.addToFavorites(item)
                     break;
                 case 'share':
@@ -38,6 +38,10 @@ const Card = (props) => {
             } else {
                 return <img src={item.content.content} alt={item.title} />
             }
+        }
+
+        const initialStyle = (item) => {
+            return item.favorite === false ? {color:'var(--light-bg-text)'} : {color:'var(--split-comp-l)'}
         }
 
         return(
@@ -72,7 +76,7 @@ const Card = (props) => {
                                     <i onClick={(event) => handleClick(event, item)} name="vote-down" className="fas fa-arrow-alt-circle-down"></i>
                                 </div>
                                 <i onClick={(event) => handleClick(event, item)} name="comment" className="fas fa-comments"></i>
-                                <i onClick={(event) => handleClick(event, item)} name="favorite" className="fas fa-star"></i>
+                                <i onClick={(event) => handleClick(event, item)} name="favorite" className="fas fa-star" style={initialStyle(item)} ></i>
                                 <i onClick={(event) => handleClick(event, item)} name="share" className="fas fa-share-square"></i>
                             </div>
                         </div>
