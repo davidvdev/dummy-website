@@ -28,12 +28,14 @@ function App() {
     const response = await fetch(url)
     const data = await response.json()
     const blogDataArr = data.items.map((item)=>{
+
+      const formattedDate = item.fields.date.split('T')[0]
         return (
           {origin : {emblem : 'https://images.unsplash.com/photo-1471970394675-613138e45da3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', 
             page:'blog', 
             pageDesc:'the Contentful blog', 
             hero: 'https://images.unsplash.com/photo-1500989145603-8e7ef71d639e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80'},
-          postTime:item.fields.date,
+          postTime:formattedDate,
           title:item.fields.title,
           content:{type:'text',content:item.fields.body}, score: 0, favorite: false
           }
