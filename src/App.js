@@ -33,7 +33,7 @@ function App() {
         return (
           {origin : {emblem : 'https://images.unsplash.com/photo-1471970394675-613138e45da3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', 
             page:'blog', 
-            pageDesc:'the Contentful blog', 
+            pageDesc:'the Contentful blog (space facts provided by theplanets.org)', 
             hero: 'https://images.unsplash.com/photo-1500989145603-8e7ef71d639e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80'},
           postTime:formattedDate,
           title:item.fields.title,
@@ -62,8 +62,6 @@ function App() {
     const postDataArr = [...blogDataArr, ...apodDataArr].map((post, index) => {
       return {...post, id:index}
     })
-    console.log(postDataArr)
-
     setPostData(postDataArr)
   }
 
