@@ -9,12 +9,15 @@ const Card = (props) => {
 
         const handleClick = (event, item) => {
           
+            console.log(event)
             const style = event.target.style
             const name = event.target.attributes[0].value
           
             switch(name) {
                 case 'vote-up':
                     event.target.style.color='var(--split-comp-l)';
+                    // item.score++;
+                    // event.target.innerhtml = item.score
                     break;
                 case 'vote-down':
                     event.target.style.color='var(--split-comp-r)';
@@ -70,11 +73,11 @@ const Card = (props) => {
                                 {contentConditional(item)}
                             </div>
                             <div className='row actions'>
-                                <div className='votes'>
+                                {/* <div className='votes'>
                                     <i onClick={(event) => handleClick(event, item)} name="vote-up" className="fas fa-arrow-alt-circle-up"></i>
                                     <p className='score'>{item.score}</p>
                                     <i onClick={(event) => handleClick(event, item)} name="vote-down" className="fas fa-arrow-alt-circle-down"></i>
-                                </div>
+                                </div> */}
                                 {/* <i onClick={(event) => handleClick(event, item)} name="comment" className="fas fa-comments"></i> */}
                                 <i onClick={(event) => handleClick(event, item)} name="favorite" className="fas fa-star" style={initialStyle(item)} ></i>
                                 {/* <i onClick={(event) => handleClick(event, item)} name="share" className="fas fa-share-square"></i> */}
