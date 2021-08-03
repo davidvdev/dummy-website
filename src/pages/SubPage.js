@@ -3,6 +3,13 @@ import React from 'react'
 import Feed from '../components/Feed'
 import PageHead from '../components/PageHead'
 
+const favPage = {
+    emblem:'https://images.unsplash.com/photo-1533558527255-407147f3ae72?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+    hero:'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=827&q=80', 
+    page:'favorites',
+    pageDesc: 'a place for all of your favorite posts'    
+}
+
 const SubPage = (props) => {
     console.log('SubPage', props)
 
@@ -17,29 +24,25 @@ const SubPage = (props) => {
     const page = props.match.params.page
 
     if (page === 'favorites'){
-
-        const favPage = {
-            emblem:'https://images.unsplash.com/photo-1533558527255-407147f3ae72?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-            hero:'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=827&q=80', 
-            page:'favorites',
-            pageDesc: 'a place for all of your favorite posts'    
-        }
-            
-
+        window.scrollTo(0,0)
         return (<>
             <PageHead {...favPage}/>
             <Feed data={props.favorites} addToFavorites={props.addToFavorites}/>
         </>)
-    } else {
-        // map over the pagesArr
-        // return a new page head and feed based on the origin values.
-        pagesArr.map(page => {
-            console.log('page map',page)
-        })
+    } else if(page ==='apod') {
+        window.scrollTo(0,0)
         return (<>
-            <PageHead {...props.data[0].origin}/>
-            <Feed data={props.data} addToFavorites={props.addToFavorites}/>
+            <PageHead {...pagesArr[1]}/>
+            <Feed data={props.data.filter(post => post.origin.page === page)} addToFavorites={props.addToFavorites}/>
         </>)
+    } else if(page ==='blog') {
+        window.scrollTo(0,0)
+        return (<>
+            <PageHead {...pagesArr[0]}/>
+            <Feed data={props.data.filter(post => post.origin.page === page)} addToFavorites={props.addToFavorites}/>
+        </>)
+    } else {
+        return <h5>we're sorry. this page does not exist yet.</h5>
     }
 }
 
