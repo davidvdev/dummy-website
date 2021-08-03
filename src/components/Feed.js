@@ -21,8 +21,6 @@ const Feed = (props) => {
             return db - da
         })
 
-        console.log('Sorted Array',sortedByDate)
-
         return (
             <Card data={props.data} addToFavorites={props.addToFavorites}/>
         )

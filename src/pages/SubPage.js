@@ -27,7 +27,7 @@ const SubPage = (props) => {
         window.scrollTo(0,0)
         return (<>
             <PageHead {...favPage}/>
-            <Feed data={props.favorites} addToFavorites={props.addToFavorites}/>
+            <Feed data={props.data.filter(post => post.favorite === true)} addToFavorites={props.addToFavorites}/>
         </>)
     } else if(page ==='apod') {
         window.scrollTo(0,0)

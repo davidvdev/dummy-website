@@ -65,8 +65,13 @@ function App() {
     setPostData(postDataArr)
   }
 
-  const addToFavorites = (newFav) => {
-    setFavPosts([...favPosts, newFav])
+  const addToFavorites = (clickedCard) => {
+    console.log('clickedCard',clickedCard)
+    const newFav = postData.filter(item => item.id === clickedCard.id)[0]
+
+    newFav.favorite = !newFav.favorite
+    console.log('newFav',newFav)
+    console.log('postData',postData)
   }
 
   useEffect(()=>{ makeAPIcall() },[])
@@ -80,7 +85,7 @@ function App() {
         </Route>
         <Route 
           path="/page/:page"
-          render={(routerProps) => {return <SubPage {...routerProps} data={postData} favorites={favPosts} addToFavorites={addToFavorites}/>}}
+          render={(routerProps) => {return <SubPage {...routerProps} data={postData} addToFavorites={addToFavorites}/>}}
         />
       </Switch>
     </div>
