@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Menu = (props) => {
+
+    const [toggle, setToggle] = useState(false)
+
     return (
         <nav className="menu">
             <ul>
