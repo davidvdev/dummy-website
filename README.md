@@ -80,6 +80,31 @@ For right now, all data is being pulled from [Contentful](https://www.contentful
   "title": "The Tulip and Cygnus X-1",
   "url": "https://apod.nasa.gov/apod/image/2107/sh2_101_04_1024.jpg"
 }
+
+// NASA Mars Rover Data
+{
+  "latest_photos": [
+    {
+      "id": 867717,
+      "sol": 161,
+      "camera": {
+        "id": 42,
+        "name": "FRONT_HAZCAM_LEFT_A",
+        "rover_id": 8,
+        "full_name": "Front Hazard Avoidance Camera - Left"
+      },
+      "img_src": "https://mars.nasa.gov/mars2020-raw-images/pub/ods/surface/sol/00161/ids/edr/browse/fcam/FLF_0161_0681240839_418ECM_N0060000FHAZ00206_01_295J01_1200.jpg",
+      "earth_date": "2021-08-02",
+      "rover": {
+        "id": 8,
+        "name": "Perseverance",
+        "landing_date": "2021-02-18",
+        "launch_date": "2020-07-30",
+        "status": "active"
+      }
+    }
+  ]
+}
 ```
 
 

@@ -66,7 +66,7 @@ function App() {
       return (
         {origin : {emblem : 'https://mars.nasa.gov/system/missions/list_view_images/23_PIA23764-RoverNamePlateonMars-320x240.jpg', 
           page:'mars-rover', 
-          pageDesc: 'Pictures taken by Perseverence',
+          pageDesc: 'Pictures taken by Perseverance',
           hero: 'https://mars.nasa.gov/system/resources/detail_files/26101_PIA24765-Figure1-web.jpg'},
         postTime:item.earth_date,
         title: `${item.rover.name} sol ${item.sol} id:${item.id}`,
