@@ -22,7 +22,9 @@ const Feed = (props) => {
         })
 
         return (
-            <Card data={props.data} addToFavorites={props.addToFavorites}/>
+            <div className="feed">
+                <Card data={props.data} addToFavorites={props.addToFavorites}/>
+            </div>
         )
     }
 

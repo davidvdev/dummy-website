@@ -6,7 +6,7 @@ import Menu from './Menu'
 const Header = (props) => {
     return (
         <header>
-            <Link to="/">
+            <Link to="/" onClick={()=> window.scrollTo(0,0)}>
             <div className="branding">
                 <img src='https://i.imgur.com/IZFreUE.png' alt='logo' />
                 <h4>Fav Space</h4>

@@ -27,6 +27,7 @@ const Menu = (props) => {
             <Link to="/page/favorites" onClick={() => closeMenu()}>
                 <div>Favs</div>
             </Link>
+            <a href="https://www.davidvdev.com" target="_blank"><div>Site by David</div></a>
             </ul>
         </nav>
     )

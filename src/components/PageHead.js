@@ -4,6 +4,21 @@ const PageHead = (props) => {
     // console.log(props)
 
     const loaded = () => {
+
+        const swapFeed = (event) => {
+            const label = event.target.innerHTML
+            switch (label){
+                case 'Page Info':
+                    console.log(event)
+                    break;
+                case 'Page Feed':
+                    console.log(label)
+                    break;
+                default:
+                    break;
+            }
+        }
+
         return (
             <div className="page-head">
                 <div className="page-head-img" style={{backgroundImage: `url(${props.hero})`}}></div>
@@ -11,8 +26,8 @@ const PageHead = (props) => {
                 <h1>{props.page}</h1>
                 <h2>{props.pageDesc}</h2>
                 <div className="page-links">
-                    <h4>Page Feed</h4>
-                    <h4>Page Info</h4>
+                    <h4 onClick={(event) => swapFeed(event)}>Page Feed</h4>
+                    <h4 onClick={(event) => swapFeed(event)}>Page Info</h4>
                 </div>
             </div>
         )
