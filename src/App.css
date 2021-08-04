@@ -70,14 +70,12 @@ header a {
   width: 0;
   overflow: hidden;
   max-width: 90vw;
-  z-index: 9;
   transition: all 0.4s;
 
 }
 
 .menuNav.showMenu {
   width: 40%;
-  box-shadow: -2px 14px 3px var(--light-bg-text);
   transition: all 0.4s;
 }
 .menuNav a {
