@@ -55,7 +55,7 @@ const Card = (props) => {
                         <div className='card' key={index}>
                             <div className='row'>
                                 <div className='post-details'>
-                                    <Link to={`/page/${item.origin.page}`} onClick={()=> window.scrollTo(0,0)}>
+                                    <Link to={`/page/${item.origin.page}`} onClick={()=> window.scrollTo(0,0)} className="details-link">
                                         <img src={item.origin.emblem} alt=''/>
                                         <h4>{item.origin.page}</h4>
                                     </Link>

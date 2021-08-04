@@ -19,7 +19,6 @@ const Menu = (props) => {
     return (
         <nav className="menu">
             <i className="fas fa-bars" onClick={handleToggle}></i>
-            {/* <button onClick={handleToggle}>{menuOpen ? "Close" : "Open"}</button> */}
             <ul className={`menuNav ${menuOpen ? " showMenu" : ""}`}>
             <Link to="/" onClick={() => closeMenu()}>
                 <div>Home</div>
