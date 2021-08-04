@@ -30,6 +30,12 @@ header {
   flex-direction: row;
   align-items: center;
 }
+
+.branding h4 {
+  margin: 0 0 0 6px;
+  font-size: 2em;
+}
+
 .branding img {
   height: 4em;
 }
@@ -163,8 +169,8 @@ header a {
 .actions {
   display: flex;
   justify-content: space-around;
-  padding-top: 1em;
-  font-size: 1.5em;
+  padding-top: 0.3em;
+  font-size: 2.5em;
 }
 
 i:active {
