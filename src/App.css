@@ -82,6 +82,7 @@ header a {
 /* PAGE HEAD STYLING */
 .page-head {
   text-align: center;
+  box-shadow: 0 3px 5px whitesmoke;
 }
 
 .page-head-img {

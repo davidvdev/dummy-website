@@ -14,6 +14,7 @@ const Menu = (props) => {
 
     const closeMenu = () => {
         setMenuOpen(false)
+        window.scrollTo(0,0)
     }
 
     return (
