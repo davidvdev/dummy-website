@@ -24,19 +24,16 @@ const SubPage = (props) => {
     const page = props.match.params.page
 
     if (page === 'favorites'){
-        window.scrollTo(0,0)
         return (<div className="app-body">
             <PageHead {...favPage}/>
             <Feed data={props.data.filter(post => post.favorite === true)} addToFavorites={props.addToFavorites}/>
         </div>)
     } else if(page ==='apod') {
-        window.scrollTo(0,0)
         return (<div className="app-body">
             <PageHead {...pagesArr[1]}/>
             <Feed data={props.data.filter(post => post.origin.page === page)} addToFavorites={props.addToFavorites}/>
         </div>)
     } else if(page ==='blog') {
-        window.scrollTo(0,0)
         return (<div className="app-body">
             <PageHead {...pagesArr[0]}/>
             <Feed data={props.data.filter(post => post.origin.page === page)} addToFavorites={props.addToFavorites}/>
