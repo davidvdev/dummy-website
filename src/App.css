@@ -127,8 +127,9 @@ header a {
 .card .post-details img {
   width: 2em;
   height: 2em;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 360px;
+  margin-right: 0.5em;
 }
 
 .card .post-details a {

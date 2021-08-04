@@ -58,8 +58,24 @@ function App() {
         }
       )
     })
+    // NASA MARS ROVER API CALL
+    const url3 = `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?&api_key=${apiKey}`
+    const response3 = await fetch(url3)
+    const data3 = await response3.json()
+    const roverDataArr = data3.latest_photos.map((item)=>{
+      return (
+        {origin : {emblem : 'https://mars.nasa.gov/system/missions/list_view_images/23_PIA23764-RoverNamePlateonMars-320x240.jpg', 
+          page:'mars-rover', 
+          pageDesc: 'Pictures taken by Perseverence',
+          hero: 'https://mars.nasa.gov/system/resources/detail_files/26101_PIA24765-Figure1-web.jpg'},
+        postTime:item.earth_date,
+        title: `${item.rover.name} sol ${item.sol} id:${item.id}`,
+        content:{type:'image',content:item.img_src}, score: 0, favorite: false
+        }
+      )
+    })
 
-    const postDataArr = [...blogDataArr, ...apodDataArr].map((post, index) => {
+    const postDataArr = [...blogDataArr, ...apodDataArr, ...roverDataArr].map((post, index) => {
       return {...post, id:index}
     })
     setPostData(postDataArr)
