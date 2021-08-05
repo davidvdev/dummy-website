@@ -53,7 +53,7 @@ function App() {
     const url3 = `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/latest_photos?&api_key=${apiKey}`
     const response3 = await fetch(url3)
     const data3 = await response3.json()
-    const roverDataArr = data3.latest_photos.map((item)=>{
+    let roverDataArr = data3.latest_photos.map((item)=>{
       return (
         {origin : {emblem : 'https://mars.nasa.gov/system/missions/list_view_images/23_PIA23764-RoverNamePlateonMars-320x240.jpg', 
           page:'mars-rover', 
@@ -65,6 +65,8 @@ function App() {
         }
       )
     })
+    
+    if (roverDataArr.length >= 8) roverDataArr = roverDataArr.slice(0,8)
 
     const postDataArr = [...blogDataArr, ...apodDataArr, ...roverDataArr].map((post, index) => {
       return {...post, id:index}
