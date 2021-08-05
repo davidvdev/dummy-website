@@ -75,12 +75,8 @@ function App() {
   }
 
   const addToFavorites = (clickedCard) => {
-    console.log('clickedCard',clickedCard)
     const newFav = postData.filter(item => item.id === clickedCard.id)[0]
-
     newFav.favorite = !newFav.favorite
-    console.log('newFav',newFav)
-    console.log('postData',postData)
   }
 
   useEffect(()=>{ makeAPIcall() },[])

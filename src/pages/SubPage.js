@@ -11,15 +11,10 @@ const favPage = {
 }
 
 const SubPage = (props) => {
-    console.log('SubPage', props)
 
     const origins = props.data.map((item) => item.origin)
     const uniquePages = [...new Set(origins.map(item => item.page))]
     const pagesArr = uniquePages.map(uniqueItem => origins.find(item => item.page === uniqueItem))
-
-    console.log('origins: ', origins)
-    console.log('uniquePages: ', uniquePages)
-    console.log('pagesArr: ', pagesArr)
 
     const page = props.match.params.page
 
