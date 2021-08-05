@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import '../loading.css'
+import Spinner from './Spinner'
 
 const Card = (props) => {
 
@@ -71,15 +71,7 @@ const Card = (props) => {
     }
 
     const loading = () => {
-        return (
-            // Loading spinner taken from https://codepen.io/mrsahar/pen/pMxyrE?editors=1100
-            <div className="col-sm-2">
-                <div id="triangle3">
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        )
+        return <Spinner />
     }
 
     return props.data ? loaded() : loading()

@@ -1,22 +1,12 @@
 import React from 'react'
 
 import Card from './Card'
+import Spinner from './Spinner'
 
 const Feed = (props) => {
 
-    const loading = () => {
-        return (
-        <div className="col-sm-2">
-            <div id="triangle3">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    )
-    }
-
     const loaded = () => {
-        const sortedByDate = props.data.sort((a,b)=> {
+        props.data.sort((a,b)=> {
             let da = new Date(a.postTime), db = new Date(b.postTime);
             return db - da
         })
@@ -26,6 +16,10 @@ const Feed = (props) => {
                 <Card data={props.data} addToFavorites={props.addToFavorites}/>
             </div>
         )
+    }
+
+    const loading = () => {
+        return <Spinner />
     }
 
     return props.data ? loaded() : loading()

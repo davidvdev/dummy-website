@@ -2,7 +2,6 @@
 import React, {useEffect, useState} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import './App.css';
-import './loading.css'
 
 import Header from './components/Header';
 import Main from './pages/Main';
@@ -11,14 +10,6 @@ import SubPage from './pages/SubPage';
 function App() {
 
   const [postData, setPostData] = useState(null)
-  const [favPosts, setFavPosts] = useState([])
-
-  // const postDataTemp = [{
-  //   orgin: {emblem:'', page:'', hero:'', pageDesc:''},
-  //   postTime: '',
-  //   title:'',
-  //   content: {type:'',content:'' }
-  // }]
 
   const makeAPIcall = async () => {
 

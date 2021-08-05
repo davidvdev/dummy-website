@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Menu = (props) => {
+const Menu = () => {
 
     const [menuOpen, setMenuOpen] = useState(false)
 
@@ -27,7 +27,7 @@ const Menu = (props) => {
             <Link to="/page/favorites" onClick={() => closeMenu()}>
                 <div>Favs</div>
             </Link>
-            <a href="https://www.davidvdev.com" target="_blank"><div>Site by David</div></a>
+            <a href="https://www.davidvdev.com" target="_blank" rel="noreferrer"><div>Site by David</div></a>
             </ul>
         </nav>
     )

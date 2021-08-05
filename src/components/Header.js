@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Menu from './Menu'
 
-const Header = (props) => {
+const Header = () => {
     return (
         <header>
             <Link to="/" onClick={()=> window.scrollTo(0,0)}>
