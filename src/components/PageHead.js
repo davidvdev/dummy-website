@@ -1,23 +1,8 @@
 import React from 'react'
 
 const PageHead = (props) => {
-    // console.log(props)
 
     const loaded = () => {
-
-        const swapFeed = (event) => {
-            const label = event.target.innerHTML
-            switch (label){
-                case 'Page Info':
-                    console.log(event)
-                    break;
-                case 'Page Feed':
-                    console.log(label)
-                    break;
-                default:
-                    break;
-            }
-        }
 
         return (
             <div className="page-head">
@@ -26,8 +11,6 @@ const PageHead = (props) => {
                 <h1>{props.page}</h1>
                 <h2>{props.pageDesc}</h2>
                 <div className="page-links">
-                    <h4 onClick={(event) => swapFeed(event)}>Page Feed</h4>
-                    <h4 onClick={(event) => swapFeed(event)}>Page Info</h4>
                 </div>
             </div>
         )
