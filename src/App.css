@@ -93,12 +93,13 @@ header a {
 .page-head {
   text-align: center;
   box-shadow: 0 3px 5px whitesmoke;
+  padding-bottom: 1em;
 }
 
 .page-head-img {
   background-size: cover;
   background-position: center;
-  height: 100px;
+  height: 250px;
   border-bottom: 1px solid var(--dark-bg-text);
 }
 
