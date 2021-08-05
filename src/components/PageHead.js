@@ -10,8 +10,6 @@ const PageHead = (props) => {
                 <img src={props.emblem} alt='page emblem' className='page-emblem'/>
                 <h1>{props.page}</h1>
                 <h2>{props.pageDesc}</h2>
-                <div className="page-links">
-                </div>
             </div>
         )
     }
