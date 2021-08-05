@@ -7,7 +7,7 @@
 
 ## Project Description
 
-This site aims to recreate a content-forward social media experience. Using the modern version of Reddit as a design inspiration, this site will display a main feed of content cards, sub feeds from which the main feed is constructed, and the ability to save cards to a personal favorites feed.
+This site aims to recreate a content-forward social media experience. Using the modern version of Reddit (and Instagram) as a design inspiration, this site will display a main feed of content cards, sub feeds from which the main feed is constructed, and the ability to save cards to a personal favorites feed.
 
 ## API
 
@@ -153,21 +153,21 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 ## Time Frames
 
-| Component                            | Priority | Estimated Time | Time Invetsted | Actual Time |
-| ------------------------------------------- |:-:| :------: | :-----: | :----: |
-| API Call and filtering data                 | H | 2 hrs    |  hrs    | hrs    |
-| Creating Contenful data                     | L | 2 hrs    |  hrs    | hrs    |
-| Standardizing data for ease of use          | M | 3 hrs    |  hrs    | hrs    |
-| Setting up useContex for easy data flow     | M | 2 hrs    |  hrs    | hrs    |
-| Skeleton styling of components for function | M | 1 hr     |  hr     | hr     |
-| Feed layout                                 | H | 1.5 hrs  |  hrs    | hrs    |
-| Card layout                                 | M | 2 hrs    |  hrs    | hrs    |
-| Link and routing through menu               | H | 2.5 hrs  |  hrs    | hrs    |
-| Effectively repurposing feed component      | L | 2 hrs    |  hrs    | hrs    |
-| Effectively repurposing page component      | L | 3 hrs    |  hrs    | hrs    |
-| Handling state and the favorites feed       | M | 3 hrs    |  hrs    | hrs    |
-| final styling and layout                    | H | 2 hrs    |  hrs    | hrs    |
-| Total                                       | - | 26 hrs   |  hrs    | hrs    | 
+| Component                            | Priority | Estimated Time | Actual Time |
+| ------------------------------------------- |:-:| :------: | :-------: |
+| API Call and filtering data                 | H | 2 hrs    |  3 hrs    |
+| Creating Contenful data                     | L | 2 hrs    |  1 hr     |
+| Standardizing data for ease of use          | M | 3 hrs    |  4 hrs    |
+| Setting up useContex for easy data flow     | M | 2 hrs    |  -        |
+| Skeleton styling of components for function | M | 1 hr     |  4 hrs    |
+| Feed layout                                 | H | 1.5 hrs  |  2 hrs    |
+| Card layout                                 | M | 2 hrs    |  3 hrs    |
+| Link and routing through menu               | H | 2.5 hrs  |  2 hrs    |
+| Effectively repurposing feed component      | L | 2 hrs    |  1 hr     |
+| Effectively repurposing page component      | L | 3 hrs    |  2 hrs    |
+| Handling state and the favorites feed       | M | 3 hrs    |  2 hrs    |
+| final styling and layout                    | H | 2 hrs    |  2 hrs    |
+| Total                                       | - | 26 hrs   | 26 hrs    | 
 
 ## Additional Libraries
 | Library | Role |
@@ -175,10 +175,14 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
+This is the code that combines all of the formatted data from my API calls, as well as limits the number of entries from the Mars Rover API Call. Not included in here is the template I used to format the incoming data to a standardized format.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+    if (roverDataArr.length >= 8) roverDataArr = roverDataArr.slice(0,8)
+
+    const postDataArr = [...blogDataArr, ...apodDataArr, ...roverDataArr].map((post, index) => {
+      return {...post, id:index}
+    })
+    setPostData(postDataArr)
+  }
 ```
